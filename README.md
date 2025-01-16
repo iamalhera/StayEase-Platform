@@ -84,7 +84,7 @@ For notifications, I used react-toastify to show pop-ups whenever necessary, lik
  
 
 ## Status
-[StayEase] is `Completed` as per assessments need.
+[StayEase] is `Completed`.
 
 ## Credits
 List of Help Guides:
