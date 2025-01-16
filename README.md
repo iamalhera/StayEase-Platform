@@ -15,7 +15,7 @@ Access this application at [StayEase](https://stayease-rental-platform.netlify.a
 - [License](#license)
 
 ## About The App
-**StayEase** is a property rental platform that allows users to explore a variety of rental properties and find the one that suits their needs. Users can manage their wishlist, handle cart management, and place bookings seamlessly. This project serves as an assessment for the **Frontend Engineer** role.
+**StayEase** is a property rental platform that allows users to explore a variety of rental properties and find the one that suits their needs. Users can manage their wishlist, handle cart management, and place bookings seamlessly.
 
 ## Screenshots
 
