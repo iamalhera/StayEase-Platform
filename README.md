@@ -1,6 +1,5 @@
 # Project Title
-**StayEase** : Property Rental Platform, Totality-Corp Assessment, Frontend Engineer Role
-
+**StayEase** : Property Rental Platform
 ## Demo link:
 Access this application at [StayEase](https://stayease-rental-platform.netlify.app/)
 
