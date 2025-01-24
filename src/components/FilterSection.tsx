@@ -12,10 +12,10 @@ const FilterSection: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full md:w-1/4 lg:w-3/9 p-4 items-start">
-      <h4 className="text-2xl font-bold text-center pb-8">Filter Properties</h4>
+      <h4 className="text-2xl font-bold text-center pb-8 flex justify-center w-full">Filter Properties</h4>
 
       {/* -----------------------------price range------------------------------------ */}
-      <span className='py-3 flex flex-wrap'>
+      <span className='py-3 flex flex-wrap justify-center w-full'>
         <label htmlFor="price_under">Under Price : <span className='font-semibold'> ${underPrice}</span></label>
         <input
           id='price_under'
@@ -36,7 +36,7 @@ const FilterSection: React.FC = () => {
 
 
       {/* ----------------------------------is available---------------------------------------- */}
-      <span className='py-3'>
+      <span className='py-3 flex justify-center w-full'>
         <input
           type="checkbox"
           id="is_available"
@@ -52,18 +52,18 @@ const FilterSection: React.FC = () => {
       </span>
 
       {/* ----------------------------------------number of bedrooms-------------------------------------------- */}
-      <span className='py-3'>
+      <span className='py-3 flex justify-center w-full'>
         <label htmlFor="bedrooms">No. of Bedrooms </label>
-        <select 
-         id="bedrooms" 
-         className='border-2' 
-         value={numberOfBedroom}
-         onChange={(e) => {
-          propertyDispatch({
-            type: "FILTER_BY_NO_OF_BEDROOM",
-            payload: Number(e.target.value)
-          })
-        }}
+        <select
+          id="bedrooms"
+          className='border-2'
+          value={numberOfBedroom}
+          onChange={(e) => {
+            propertyDispatch({
+              type: "FILTER_BY_NO_OF_BEDROOM",
+              payload: Number(e.target.value)
+            })
+          }}
         >
           <option value="1">1</option>
           <option value="2">2</option>
@@ -74,113 +74,119 @@ const FilterSection: React.FC = () => {
       </span>
 
       {/* -----------------------------------------amenities----------------------------------- */}
-      <span className='py-3'>
-        <p className='text-start pb-1'>Select Amenities : </p>
-        {/* -------------------GYM--------------------- */}
-        <span>
-          <input
-            type="checkbox"
-            id="have_gym"
-            name="group-1"
-          checked={haveGym}
-          onChange={() => {
-              propertyDispatch({
+      <div className=" flex justify-center w-full">
+        <span className='py-3'>
+          <p className='text-start pb-1'>Select Amenities : </p>
+          {/* -------------------GYM--------------------- */}
+          <span>
+            <input
+              type="checkbox"
+              id="have_gym"
+              name="group-1"
+              checked={haveGym}
+              onChange={() => {
+                propertyDispatch({
                   type: "FILTER_BY_HAVE_GYM"
-              });
-          }}
-          />
-          <label htmlFor="have_gym"> Gym</label>
-        </span>
-        {/* -------------Parking--------------- */}
-        <span className='px-4'>
-          <input
-            type="checkbox"
-            id="have_parking"
-            name="group-1"
-          checked={haveParking}
-          onChange={() => {
-              propertyDispatch({
+                });
+              }}
+            />
+            <label htmlFor="have_gym"> Gym</label>
+          </span>
+          {/* -------------Parking--------------- */}
+          <span className='px-4'>
+            <input
+              type="checkbox"
+              id="have_parking"
+              name="group-1"
+              checked={haveParking}
+              onChange={() => {
+                propertyDispatch({
                   type: "FILTER_BY_HAVE_PARKING"
-              });
-          }}
-          />
-          <label htmlFor="have_parking"> Parking</label>
-        </span>
-        {/* -------------Pool--------------------- */}
-        <span>
-          <input
-            type="checkbox"
-            id="have_pool"
-            name="group-1"
-          checked={havePool}
-          onChange={() => {
-              propertyDispatch({
+                });
+              }}
+            />
+            <label htmlFor="have_parking"> Parking</label>
+          </span>
+          {/* -------------Pool--------------------- */}
+          <span>
+            <input
+              type="checkbox"
+              id="have_pool"
+              name="group-1"
+              checked={havePool}
+              onChange={() => {
+                propertyDispatch({
                   type: "FILTER_BY_HAVE_POOL"
-              });
-          }}
-          />
-          <label htmlFor="have_pool"> Pool</label>
-        </span>
-        <br />
+                });
+              }}
+            />
+            <label htmlFor="have_pool"> Pool</label>
+          </span>
+          <br />
           {/* ------------WIFI-------------------- */}
-        <span>
-          <input
-            type="checkbox"
-            id="have_wifi"
-            name="group-1"
-            checked={haveWifi}
-            onChange={()=>{
-              propertyDispatch({
-                type: "FILTER_BY_HAVE_WIFI"
-              })
-            }}
-          />
-          <label htmlFor="have_wifi"> WiFi</label>
-        </span>
-            {/* --------------Balcony---------------- */}
-        <span className='px-4'>
-          <input
-            type="checkbox"
-            id="have_balcony"
-            name="group-1"
-          checked={haveBalcony}
-          onChange={() => {
-              propertyDispatch({
+          <span>
+            <input
+              type="checkbox"
+              id="have_wifi"
+              name="group-1"
+              checked={haveWifi}
+              onChange={() => {
+                propertyDispatch({
+                  type: "FILTER_BY_HAVE_WIFI"
+                })
+              }}
+            />
+            <label htmlFor="have_wifi"> WiFi</label>
+          </span>
+          {/* --------------Balcony---------------- */}
+          <span className='px-4'>
+            <input
+              type="checkbox"
+              id="have_balcony"
+              name="group-1"
+              checked={haveBalcony}
+              onChange={() => {
+                propertyDispatch({
                   type: "FILTER_BY_HAVE_BALCONY"
-              });
-          }}
-          />
-          <label htmlFor="have_balcony"> Balcony</label>
-        </span>
+                });
+              }}
+            />
+            <label htmlFor="have_balcony"> Balcony</label>
+          </span>
 
-      </span>
+        </span>
+      </div>
 
       {/* --------------------------------------location--------------------------------- */}
-      <span className='py-3'>
-        <label htmlFor="location">Location : </label>
-        <input
-          className="border-2 pl-1"
-          placeholder="Search"
-        value={searchQueryForLocation}
-        onChange={(e) => {
-            propertyDispatch({
+      <div className='flex justify-center w-full'>
+        <span className='py-3'>
+          <label htmlFor="location">Location : </label>
+          <input
+            className="border-2 pl-1"
+            placeholder="Search"
+            value={searchQueryForLocation}
+            onChange={(e) => {
+              propertyDispatch({
                 type: "FILTER_BY_SEARCH_FOR_LOCATION",
                 payload: e.target.value
-            });
-        }}
-        />
-      </span>
+              });
+            }}
+          />
+        </span>
+      </div>
       {/* -------------------------------clear all--------------------------------------------- */}
-      <button
-        className="bg-blue-600 text-white p-1 w-32 rounded hover:text-blue-100"
-        onClick={() => {
-          propertyDispatch({
-          type: "CLEAR_FILTERS"
-          });
-        }}
-      >
-        Clear Filters
-      </button>
+      <div className='w-full flex justify-center'>
+        <button
+          className="bg-blue-600 text-white p-1 w-32 rounded hover:text-blue-100"
+          onClick={() => {
+            propertyDispatch({
+              type: "CLEAR_FILTERS"
+            });
+          }}
+        >
+          Clear Filters
+        </button>
+      </div>
     </div>
   );
 };
